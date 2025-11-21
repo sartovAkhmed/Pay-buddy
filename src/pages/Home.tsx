@@ -11,7 +11,7 @@ const Home = () => {
       <div className="home">
         <section className="hero">
           <div className="hero__content">
-            <div className="flex items-center gap-2 justify-center">
+            <div className="flex items-center gap-6 justify-center">
               <img
                 className="bg-white rounded-lg p-2"
                 src="/icons8-деньги-60.png"

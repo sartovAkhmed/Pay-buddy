@@ -41,5 +41,10 @@ export default defineConfig({
     },
     chunkSizeWarningLimit: 1000, // Увеличиваем лимит предупреждения до 1MB
   },
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: true,
+  },
 })
 
