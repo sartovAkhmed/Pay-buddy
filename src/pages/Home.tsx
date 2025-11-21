@@ -11,9 +11,9 @@ const Home = () => {
       <div className="home">
         <section className="hero">
           <div className="hero__content">
-            <div className="flex items-center gap-6 justify-center">
+            <div className="flex items-center sm:gap-6 gap-2 justify-center">
               <img
-                className="bg-white rounded-lg p-2"
+                className="bg-white rounded-lg p-2 sm:block hidden"
                 src="/icons8-деньги-60.png"
                 alt="Pay Buddy"
               />
@@ -26,7 +26,7 @@ const Home = () => {
                 pauseBetweenAnimations={1}
               />
             </div>
-            <p className="mt-4 text-4xl font-bold mb-8">
+            <p className="mt-4 sm:text-4xl text-2xl font-bold mb-8">
               Умное приложение для разделения счетов и управления совместными
               расходами
             </p>
