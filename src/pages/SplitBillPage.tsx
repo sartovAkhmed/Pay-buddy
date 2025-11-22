@@ -268,7 +268,7 @@ const SplitBillPage = () => {
       window.alert("Ссылка скопирована, отправьте её участнику вручную.");
     } catch (error) {
       console.error(error);
-      window.alert("Не удалось скопировать ссылку.");
+      window.alert("Не удалось скопировать ссылку... Попробуйте вручную.");
     }
   };
 
