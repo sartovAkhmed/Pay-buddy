@@ -28,7 +28,7 @@ const ScanQR = () => {
       };
 
       // URL API из переменной окружения VITE_API_URL
-      const API_URL = import.meta.env.VITE_API_URL;
+      const API_URL = "https://api.paybudy.tw1.su/api/v1/ticket";
 
       console.log("=== Начало отправки POST-запроса ===");
       console.log("Отсканированный URL:", url);

@@ -11,10 +11,12 @@
 Компонент для сканирования QR-кодов с использованием библиотеки `html5-qrcode`.
 
 **Props:**
+
 - `onScanSuccess: (url: string) => void` - callback при успешном сканировании
 - `onClose: () => void` - callback при закрытии сканера
 
 **Особенности:**
+
 - Автоматический запуск камеры при монтировании
 - Автоматическая остановка при размонтировании
 - Обработка ошибок доступа к камере
@@ -24,6 +26,7 @@
 Страница для сканирования QR-кодов с обработкой результатов.
 
 **Функционал:**
+
 1. Открытие модального окна сканера
 2. Сканирование QR-кода
 3. Логирование URL в консоль
@@ -36,17 +39,17 @@
 
 ```typescript
 {
-  url: string;              // Отсканированный URL
-  timestamp: string;        // ISO timestamp сканирования
+  url: string; // Отсканированный URL
+  timestamp: string; // ISO timestamp сканирования
   deviceInfo: {
-    userAgent: string;      // User agent браузера
-    platform: string;       // Платформа устройства
-    language: string;       // Язык браузера
-  };
+    userAgent: string; // User agent браузера
+    platform: string; // Платформа устройства
+    language: string; // Язык браузера
+  }
   metadata: {
-    source: string;         // Источник: 'qr-scanner'
-    app: string;            // Название приложения: 'pay-buddy'
-  };
+    source: string; // Источник: 'qr-scanner'
+    app: string; // Название приложения: 'pay-buddy'
+  }
 }
 ```
 
@@ -71,13 +74,17 @@
 ### Настройка API URL
 
 1. Создайте файл `.env` в корне проекта:
+
 ```env
 VITE_API_URL=https://your-api.com/qr-scan
 ```
 
 2. Или используйте значение по умолчанию (для разработки):
+
 ```typescript
-const API_URL = import.meta.env.VITE_API_URL || 'https://api.example.com/qr-scan';
+const API_URL =
+  "https://api.paybudy.tw1.su/api/v1/ticket" ||
+  "https://api.example.com/qr-scan";
 ```
 
 ## Использование
@@ -95,15 +102,17 @@ const API_URL = import.meta.env.VITE_API_URL || 'https://api.example.com/qr-scan
 #### Логирование
 
 Все отсканированные URL логируются в консоль:
+
 ```javascript
-console.log('Отсканированный URL:', url);
-console.log('Отправка POST-запроса с данными:', requestBody);
-console.log('Ответ от сервера:', data);
+console.log("Отсканированный URL:", url);
+console.log("Отправка POST-запроса с данными:", requestBody);
+console.log("Ответ от сервера:", data);
 ```
 
 #### Обработка ошибок
 
 Компонент обрабатывает следующие ошибки:
+
 - Ошибки доступа к камере
 - Ошибки HTTP запросов
 - Ошибки парсинга ответа
@@ -111,6 +120,7 @@ console.log('Ответ от сервера:', data);
 #### Кастомизация
 
 Для добавления авторизации в запросы, раскомментируйте и настройте:
+
 ```typescript
 headers: {
   'Content-Type': 'application/json',
@@ -157,30 +167,30 @@ interface QRScanResponse {
 ### Пример обработки на сервере (Node.js/Express)
 
 ```javascript
-app.post('/qr-scan', async (req, res) => {
+app.post("/qr-scan", async (req, res) => {
   const { url, timestamp, deviceInfo, metadata } = req.body;
-  
+
   // Валидация
   if (!url || !timestamp) {
     return res.status(400).json({
       success: false,
       error: {
-        code: 'INVALID_REQUEST',
-        message: 'Missing required fields'
-      }
+        code: "INVALID_REQUEST",
+        message: "Missing required fields",
+      },
     });
   }
-  
+
   // Обработка URL
   // ... ваша логика ...
-  
+
   res.json({
     success: true,
-    message: 'QR code processed successfully',
+    message: "QR code processed successfully",
     data: {
       url,
-      processedAt: new Date().toISOString()
-    }
+      processedAt: new Date().toISOString(),
+    },
   });
 });
 ```
@@ -195,13 +205,14 @@ app.post('/qr-scan', async (req, res) => {
 ## Поддержка браузеров
 
 Сканер QR-кодов работает в браузерах с поддержкой:
+
 - MediaDevices API (getUserMedia)
 - Modern JavaScript (ES6+)
 - HTML5 Video
 
 Рекомендуемые браузеры:
+
 - Chrome 53+
 - Firefox 36+
 - Safari 11+
 - Edge 12+
-
