@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "@/components/Navigation.css";
+import TelegramLogin from "./TelegramLogin";
 
 const Navigation = () => {
   const location = useLocation();
@@ -103,6 +104,7 @@ const Navigation = () => {
               О проекте
             </Link>
           </li>
+          <TelegramLogin />
         </ul>
       </div>
     </nav>

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
-import BlurText from "@/components/BlurText";
 import "@/pages/Home.css";
 import TrueFocus from "@/components/TrueFocus";
 
